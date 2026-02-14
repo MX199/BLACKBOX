@@ -206,7 +206,7 @@ All code is documented with JSDoc comments. Check out the `CHANGELOG.md` for det
 ## 📞 Support
 
 - 🐛 **Bug reports**: [GitHub Issues](https://github.com/MX199/BLACKBOX/issues)
-- 💬 **Questions**: [reddit]([https://www.reddit.com/r/Bandlab/comments/1r48uly/never_lose_a_bandlab_track_again_armor_pro_v433/])
+- 💬 **Questions**: [reddit](https://www.reddit.com/r/Bandlab/comments/1r48uly/never_lose_a_bandlab_track_again_armor_pro_v433/)
 - ⭐ **Like it?** Star the repo!
 
 ---
