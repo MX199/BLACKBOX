@@ -28,3 +28,4 @@ A stealth utility for BandLab Studio. Designed for creators who need reliability
 ---
 
 *made by mx | v1.0.0*
+<img width="426" height="822" alt="image" src="https://github.com/user-attachments/assets/9c89c2eb-75a8-404f-aa92-1cd83369b54f" />
