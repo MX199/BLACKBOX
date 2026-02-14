@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BLACKBOX</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0A0A0A;
+      --surface: #141414;
+      --accent: #FF3131;
+      --text: #FFFFFF;
+      --text-dim: #666666;
+      --border: rgba(255, 255, 255, 0.05);
+      --radius: 12px;
+    }
+
+    body {
+      width: 320px;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      user-select: none;
+      overflow-x: hidden;
+    }
+
+    .container { padding-bottom: 20px; }
+
+    .header {
+      padding: 30px 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-img {
+      height: 30px;
+      width: auto;
+      filter: drop-shadow(0 0 8px rgba(255, 49, 49, 0.3));
+    }
+
+    .brand-text h1 {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    .status-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      color: var(--accent);
+      background: rgba(255, 49, 49, 0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+      width: fit-content;
+      margin-top: 4px;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+    }
+
+    .content { padding: 20px 16px; display: flex; flex-direction: column; gap: 8px; }
+
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 14px 16px; display: flex;
+      justify-content: space-between; align-items: center;
+    }
+
+    .info h2 { margin: 0; font-size: 13px; font-weight: 600; }
+    .info p { margin: 1px 0 0; font-size: 8px; color: var(--text-dim); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; }
+
+    .switch { position: relative; display: inline-block; width: 32px; height: 18px; }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider {
+      position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #222; transition: .25s cubic-bezier(0.4, 0, 0.2, 1); border-radius: 20px;
+    }
+    .slider:before {
+      position: absolute; content: ""; height: 12px; width: 12px;
+      left: 3px; bottom: 3px; background-color: #eee; transition: .25s cubic-bezier(0.4, 0, 0.2, 1); border-radius: 50%;
+    }
+    input:checked + .slider { background-color: var(--accent); }
+    input:checked + .slider:before { transform: translateX(14px); }
+
+    .input-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 14px 16px; display: flex;
+      justify-content: space-between; align-items: center;
+    }
+    
+    .input-box span { font-size: 13px; font-weight: 600; }
+
+    input[type=number] {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      color: var(--accent);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      padding: 5px;
+      border-radius: 6px;
+      width: 48px;
+      text-align: center;
+      outline: none;
+    }
+
+    input[type=number]:focus { border-color: var(--accent); }
+
+    .footer { 
+      padding: 40px 20px 20px; 
+      text-align: center; 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center;
+      gap: 12px; 
+    }
+
+    .github-link {
+      color: #777;
+      text-decoration: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: color 0.2s ease;
+    }
+    .github-link:hover { color: var(--accent); }
+    .github-link .dot {
+      width: 4px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 6px var(--accent);
+    }
+
+    .main-credits {
+      font-size: 9px;
+      color: #333;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 800;
+      margin-top: 4px;
+    }
+    .main-credits .divider {
+      color: #1a1a1a;
+      margin: 0 4px;
+    }
+
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="brand-row">
+        <img src="logo-png.png" class="logo-img" alt="BLACKBOX">
+        <div class="brand-text">
+          <h1>Blackbox</h1>
+          <div class="status-badge">STABLE V1.1.0</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="card">
+        <div class="info"><h2>Pulse Save</h2><p>Auto-sync activity</p></div>
+        <label class="switch"><input type="checkbox" id="autoSave"><span class="slider"></span></label>
+      </div>
+
+      <div class="input-box" id="sync-rate-wrapper">
+        <span>Sync Rate (sec)</span>
+        <input type="number" id="syncRate" min="1" max="999">
+      </div>
+
+      <div class="card">
+        <div class="info"><h2>Offline Guard</h2><p>Freeze on signal loss</p></div>
+        <label class="switch"><input type="checkbox" id="offlineGuard"><span class="slider"></span></label>
+      </div>
+
+      <div class="card">
+        <div class="info"><h2>Back Guard</h2><p>Block back navigation</p></div>
+        <label class="switch"><input type="checkbox" id="preventBack"><span class="slider"></span></label>
+      </div>
+
+      <div class="card">
+        <div class="info"><h2>Close Guard</h2><p>Warn on tab close</p></div>
+        <label class="switch"><input type="checkbox" id="preventClose"><span class="slider"></span></label>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <a href="https://github.com/MX199/BLACKBOX" target="_blank" class="github-link">
+        <span class="dot"></span> GITHUB REPOSITORY
+      </a>
+      <div class="main-credits">
+        BY MX <span class="divider">/</span> BANDLAB STUDIO
+      </div>
+    </footer>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
