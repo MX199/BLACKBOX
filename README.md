@@ -199,7 +199,7 @@ BLACKBOX:
 ## 🛠️ Development
 
 Want to contribute or modify BLACKBOX?
-All code is documented with JSDoc comments. Check out the `CHANGELOG.md` for detailed technical changes.
+All code is documented with JSDoc comments.
 
 ---
 
