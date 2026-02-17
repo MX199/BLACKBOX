@@ -185,8 +185,6 @@ BLACKBOX:
 - ✨ **NEW:** Custom HUD notification system — replaces BandLab's native save toasts
 - ✨ **NEW:** Reconnecting screen when coming back online after Offline Lock
 - ✨ **NEW:** HUD Alerts toggle in settings
-- 🔧 Fixed infinite save loop that was freezing BandLab
-- 🔧 Fixed double script injection on SPA navigation
 - ⚡ Streamlined save logic — no more verification polling
 - 🎨 Improved stealth branding throughout
 
